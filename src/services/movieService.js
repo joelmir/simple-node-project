@@ -28,8 +28,21 @@ const updateMovie = (id, params) => {
     )
 }
 
+const removeMovie = (id) => {
+    if(_.isEmpty(id)){
+        // TODO
+        return;
+    }
+    return Movie.destroy(
+        {
+            where: {id: id}
+        }
+    )
+}
+
 module.exports = {
     createMovie,
     readMovies,
-    updateMovie
+    updateMovie,
+    removeMovie
 }

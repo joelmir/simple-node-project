@@ -36,6 +36,7 @@ const _declareRountes = () => {
     server.post('/rest/movie', movieApi.doCreateMovie);
     server.get('/rest/movie', movieApi.doReadMovies);
     server.put('/rest/movie/:id', movieApi.doUpdateMovie);
+    server.del('/rest/movie/:id', movieApi.doDeleteMovie);
 }
 
 const init = () => {

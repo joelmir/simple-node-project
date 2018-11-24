@@ -22,7 +22,7 @@ const doReadMovies = (req, res, next) => {
         res.status(500);
         res.send({
             code: 500,
-            message: ' Error on create movie'
+            message: ' Error on get movies'
         })
         console.error(error);
     })
@@ -37,14 +37,32 @@ const doUpdateMovie = (req, res, next) => {
         res.status(500);
         res.send({
             code: 500,
-            message: ' Error on create movie'
+            message: ' Error on update movie'
         })
         console.error(error);
     })
 }
 
+const doDeleteMovie = (req, res, next) => {
+    const movieId = req.params.id;
+    movieService.removeMovie(movieId).then(response => {
+        res.send({success:true});
+        next();
+    }).catch(error => {
+        res.status(500);
+        res.send({
+            code: 500,
+            message: ' Error on delete movie'
+        })
+        console.error(error);
+    })
+}
+
+
+
 module.exports = {
     doCreateMovie,
     doReadMovies,
-    doUpdateMovie
+    doUpdateMovie,
+    doDeleteMovie
 }
