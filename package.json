@@ -1,0 +1,19 @@
+{
+  "name": "simple-node-project",
+  "version": "1.0.0",
+  "description": "Simple NodeJS application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelmir/simple-node-project.git"
+  },
+  "author": "Joelmir Ribacki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joelmir/simple-node-project/issues"
+  },
+  "homepage": "https://github.com/joelmir/simple-node-project#readme"
+}
