@@ -4,6 +4,7 @@
   "description": "Simple NodeJS application",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon ./src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/joelmir/simple-node-project/issues"
   },
-  "homepage": "https://github.com/joelmir/simple-node-project#readme"
+  "homepage": "https://github.com/joelmir/simple-node-project#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  },
+  "dependencies": {
+    "restify": "^7.2.3",
+    "sequelize": "^4.41.2",
+    "sqlite3": "^4.0.4"
+  }
 }
