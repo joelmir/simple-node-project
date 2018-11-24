@@ -1,5 +1,5 @@
 const restify = require("restify");
-
+const movieApi = require('./api/movieApi')
 const serverPort = 8888;
 let server = {};
 
@@ -32,6 +32,12 @@ const _declareDefaultRoute = () => {
 
 }
 
+const _declareRountes = () => {
+    server.post('/rest/movie', movieApi.doCreateMovie);
+    server.get('/rest/movie', movieApi.doReadMovies);
+    server.put('/rest/movie/:id', movieApi.doUpdateMovie);
+}
+
 const init = () => {
     server = restify.createServer({handleUncaughtExceptions: true});
     server.use(restify.plugins.bodyParser({mapParams: true}));
@@ -39,7 +45,7 @@ const init = () => {
     _declareCorsHeaders();
     _addExceptionHandling();
     _declareDefaultRoute();
-
+    _declareRountes();
     server.listen(serverPort, () => {
         console.info(`Server listen on port ${serverPort}`)
     });
