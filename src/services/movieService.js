@@ -14,6 +14,10 @@ const readMovies = (params) => {
 }
 
 const updateMovie = (id, params) => {
+    if(_.isEmpty(params.name) || _.isEmpty(params.description)){
+        // TODO
+        return;
+    }
     return Movie.update(
         {
             ...params
